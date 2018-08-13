@@ -1,5 +1,5 @@
 
-import React from 'React';
+import React from 'react';
 export default function CarouselPrevBtn(props) {
     const {goToSlide, index} = props;
     return(

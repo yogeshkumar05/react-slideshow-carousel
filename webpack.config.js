@@ -5,7 +5,11 @@ const htmlWebpackPlugin = new HtmlWebpackPlugin({
     filename: "./index.html"
 });
 module.exports = {
-    entry: path.join(__dirname, "examples/src/index.js"),
+    entry: path.join(__dirname, "examples/src/index.jsx"),
+    output: {
+        path: path.join(__dirname, "examples/dist"),
+        filename: "bundle.js"
+    },
     module: {
         rules: [
             {
@@ -14,8 +18,8 @@ module.exports = {
                 exclude: /node_modules/
             },
             {
-                test: /\.scss$/,
-                use: ["style-loader", "css-loader"]
+                test: /\.scss|.css$/,
+                use: ["style-loader","css-loader","sass-loader"]
             }
         ]
     },

@@ -1,4 +1,4 @@
-import React,{Component} from 'React';
+import React, {Component} from 'react';
 import mockData from './mockData.json';
 import CarouselDot from './CarouselDot';
 import CarouselNextBtn from './CarouselNextBtn';
@@ -32,7 +32,7 @@ export default class extends Component {
     render() {
         console.log(mockData);
         return(<div>
-        <div class="container">
+        <div className="container">
         <img className='fade' src={mockData.images[this.state.currentSlideIndex]} alt="Snow"/>
         <CarouselPrevBtn goToSlide={this.goToSlide} index ={this.state.currentSlideIndex}/>
         <CarouselNextBtn goToSlide={this.goToSlide} index={this.state.currentSlideIndex}/>
@@ -44,7 +44,7 @@ export default class extends Component {
         </div>
         </div>
 
-<div class="clearfix"></div>
+<div className="clearfix"></div>
       </div>)
     }
 }
