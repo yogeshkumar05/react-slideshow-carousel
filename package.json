@@ -1,6 +1,6 @@
 {
   "name": "react-slideshow-carousel",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "simple & customizable carousel built using ReactJS",
   "main": "dist/index.js",
   "scripts": {
