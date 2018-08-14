@@ -10,13 +10,11 @@ export default class extends Component {
     }
     componentDidMount () {
         const that = this;
-        console.log(this.props.config);
         this.slideshowHandle = this.props.config.autoplay && setInterval(function(){that.goToSlide(that.state.currentSlideIndex, false, true); }, this.props.config.idleTime);
     }
     goToSlide = (index, prev=false, next=false) => {
         const that = this;
         const totalImages = this.props.config.data.length;
-        console.log(this.props.config.infinite);
         const {infinite, tofro, idleTime, autoplay} = this.props.config;
         if(infinite) {
             if(next) {
@@ -25,8 +23,6 @@ export default class extends Component {
                 index = index === 0 ? totalImages-1 : (index -1 ) % totalImages;
             }
         } else {
-            console.log(index);
-            console.log(totalImages);
             if(next) {
                 if(index !== totalImages-1) {
                     index = (index + 1 ) % totalImages;
@@ -51,15 +47,16 @@ export default class extends Component {
     getSlideDots() {
         const dotsArray =[];
         for(let i =0;i <this.props.config.data.length; i++){
-            dotsArray.push(<CarouselDot index={i} currentSlideIndex={this.state.currentSlideIndex} goToSlide={this.goToSlide}/>);
+            dotsArray.push(<CarouselDot key={i} index={i} currentSlideIndex={this.state.currentSlideIndex} goToSlide={this.goToSlide}/>);
         }
         return dotsArray;
     }
     render() {
-        console.log(this.props.config.data);
-        const {data, infinite, showCaption} = this.props.config;
+        const {data, infinite, showCaption, showSlideNum} = this.props.config;
         return(<div>
         <div className="container">
+            {
+            showSlideNum && <div className='numbertext'>{this.state.currentSlideIndex+1} / {data.length}</div>}
         <img className='fade' src={data[this.state.currentSlideIndex].src} alt="Snow"/>
         {
             (infinite || this.state.currentSlideIndex > 0) && <CarouselPrevBtn goToSlide={this.goToSlide} index ={this.state.currentSlideIndex}/>

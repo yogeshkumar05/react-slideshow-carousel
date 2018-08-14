@@ -9,7 +9,8 @@ const MyComponent = (props) => {
         "tofro" : false, 
         "autoplay": true, 
         "idleTime" : 2000,
-        "showCaption": true
+        "showCaption": true,
+        "showSlideNum" : true
     };
     return <Main config={config}/>
 };
