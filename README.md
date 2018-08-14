@@ -7,6 +7,7 @@ npm i react-slideshow-carousel --save
 Also install node-sass & sass-loader if already not installed in your application
 
 # Usage
+```javascript
 import React, Component from 'react';
 import ReactCarousel from 'react-slideshow-carousel';
 
@@ -23,7 +24,7 @@ export default function MyComponent (props) {
     };
     return <MyComponent config = {myConfig}/>;
 }
-
+```
 # Options
 all the below configuration options (settings) should be passed as props in the form of an object named 'config' as shown in the example above.
 
