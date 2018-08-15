@@ -40,7 +40,8 @@ all the below configuration options (settings) should be passed as props in the 
 
 3. **tofro**: a boolean to specify whether to & fro oscillation of slides should be enabled. 
     * possible values: true | false ; false by default
-    * 'infinite' has highest priority than 'tofro', hence if 'inifnite' is true, the value of 'tofro' will not be conisdered       * If 'inifinite' is false and 'tofro' is true, the slideshow will move back & forth after reaching the edge slides, e.g,         when the slideshow reaches the last slide, it will move back one slide at a time till the beginning, and again toward         the end
+    * 'infinite' has highest priority than 'tofro', hence if 'inifnite' is true, the value of 'tofro' will not be conisdered
+    * If 'inifinite' is false and 'tofro' is true, the slideshow will move back & forth after reaching the edge slides, e.g,         when the slideshow reaches the last slide, it will move back one slide at a time till the beginning, and again toward         the end
     * 'autoplay' should be true for 'tofro' to work
     
 4. **autoplay**: a boolean to indicate if the slideshow should play automatically
