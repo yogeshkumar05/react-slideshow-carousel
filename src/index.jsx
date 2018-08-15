@@ -10,7 +10,9 @@ const MyComponent = (props) => {
         "autoplay": true, 
         "idleTime" : 2000,
         "showCaption": true,
-        "showSlideNum" : true
+        "showSlideNum" : true,
+        "showDots": true,
+        "showArrows": 'both'
     };
     return <Main config={config}/>
 };

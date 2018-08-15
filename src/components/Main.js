@@ -52,24 +52,24 @@ export default class extends Component {
         return dotsArray;
     }
     render() {
-        const {data, infinite, showCaption, showSlideNum} = this.props.config;
+        const {data, infinite, showCaption, showSlideNum, showDots, showArrows} = this.props.config;
         return(<div>
         <div className="container">
             {
             showSlideNum && <div className='numbertext'>{this.state.currentSlideIndex+1} / {data.length}</div>}
         <img className='fade' src={data[this.state.currentSlideIndex].src} alt="Snow"/>
         {
-            (infinite || this.state.currentSlideIndex > 0) && <CarouselPrevBtn goToSlide={this.goToSlide} index ={this.state.currentSlideIndex}/>
+            (showArrows === 'both' || showArrows === 'prev') && (infinite || this.state.currentSlideIndex > 0) && <CarouselPrevBtn goToSlide={this.goToSlide} index ={this.state.currentSlideIndex}/>
         }
         {
-            (infinite || this.state.currentSlideIndex !== data.length-1) && <CarouselNextBtn goToSlide={this.goToSlide} index={this.state.currentSlideIndex}/>
+            (showArrows === 'both' || showArrows === 'next') && (infinite || this.state.currentSlideIndex !== data.length-1) && <CarouselNextBtn goToSlide={this.goToSlide} index={this.state.currentSlideIndex}/>
         }
         {
             showCaption && <div className="centered">{data[this.state.currentSlideIndex].caption}</div>
         }
         <div className="dots-wrapper">
         {
-           this.getSlideDots()
+          showDots && this.getSlideDots()
         }
         </div>
         </div>
