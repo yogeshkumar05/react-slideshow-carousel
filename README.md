@@ -2,9 +2,14 @@
 simple &amp; easy to use customizable slideshow carousel built using ReactJS
 
 # Installation
+```javascript
 npm i react-slideshow-carousel --save
+```
 
 Also install node-sass & sass-loader if already not installed in your application
+```javascript
+npm i node-sass sass-loader --save
+```
 
 # Usage
 ```javascript
@@ -28,20 +33,22 @@ export default function MyComponent (props) {
 # Options
 all the below configuration options (settings) should be passed as props in the form of an object named 'config' as shown in the example above.
 
-1. data : an array of image paths
-2. infinite: a boolean to specify whether infinite looping is on or off
+1. ** data ** : an array of image paths
+
+2. ** infinite **: a boolean to specify whether infinite looping is on or off
     possible values: true | false ; true by default
-3. tofro: a boolean to specify whether to & from oscillation of slides should be enabled.
+
+3. ** tofro **: a boolean to specify whether to & from oscillation of slides should be enabled.
     possible values: true | false ; false by default
     'infinite' has highest priority than 'tofro', hence if 'inifnite' is true, the value of 'tofro' will not be conisdered. If 'inifinite' is false and 'tofro' is true, the slideshow will move back & forth after reaching the edge slides, e.g, when the slideshow reaches the last slide, it will move back one slide at a time till the beginning, and again toward the end.
-4. autoplay: a boolean to indicate if the slideshow should play automatically
+4. ** autoplay **: a boolean to indicate if the slideshow should play automatically
     possible values: true | false ; true by default
     If this value is false, user has to manually click the dots or arrows to move to corresponding slide
-5. idleTime: time in milliseconds to specify how long a slide should appear, before moving to the next
+5. ** idleTime **: time in milliseconds to specify how long a slide should appear, before moving to the next
     possible values: any number > 0 ; default value is 2000, which is 2 seconds
-6. showCaption: a boolean value to specify if a caption should be displayed for each slide
+6. ** showCaption **: a boolean value to specify if a caption should be displayed for each slide
      possible values: true | false ; true by default
-7. showSlideNum: a boolean to specify the number of slides
+7. ** showSlideNum **: a boolean to specify the number of slides
      possible values: true | false ; true by default
      If the value is true, a number will indicate the current slide number & total number of slides, eg., 2/5 means current slide is 2 and total number of slides is 5.
 
